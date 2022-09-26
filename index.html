@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji fun</title>
+    <style>
+        body{
+            background-color: #111;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 80vh;
+        }
+        .worry{
+            position: relative;
+            top: 2rem;
+            font-size: 50px;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            visibility: hidden;
+            animation-name:worry;
+            animation-duration: 3.5s;
+            
+        }
+        @keyframes worry{
+            0%{
+                visibility: visible;
+            }
+            100%{
+                visibility: hidden;
+            }
+        }
+
+        .noworry{
+            font-size: 50px;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            position: absolute;
+            top:8%;
+            left:23%;
+            opacity: 0;
+            animation-name: ohyes;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-delay: 4.5s;
+            display: block;
+        }
+        @keyframes ohyes{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .emoji{
+            position: relative;
+            width:400px;
+            height:400px;
+            background-color: #ff4e00;
+            background-image: linear-gradient(to top, #fc9e0b 0%, #ecde05 74%);
+            border-radius: 50%;
+            animation-name: grow;
+            animation-duration: 2s;
+            animation-iteration-count: 2;
+            transform: rotateX(20deg);
+            box-shadow: 0px 0px 15px black;
+            margin-top: 100px;
+        }
+        @keyframes grow{
+            0%{
+                transform: rotateX(20deg);
+            }
+            50%{
+                transform: rotateX(0deg);
+            }
+            100%{
+                transform: rotateX(20deg);
+            }
+        }
+        .emoji::before{
+            content: "";
+            position: absolute;
+            top:86px;
+            left:112px;
+            background-color: black;
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            animation-name: flip-x;
+            animation-duration: 2s;     
+            animation-iteration-count: 3;
+        }
+        .emoji::after{
+            content: "";
+            position: absolute;
+            top:86px;
+            right:112px;
+            background-color: black;
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            animation-name: flip-x;
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+        }
+        @keyframes flip-x{
+            0%{
+                transform: rotateX(0) translateY(0);
+            }
+            50%{
+                transform: rotateX(-180deg) translateY(50%);
+            }
+            100%{
+                transform: rotateX(0deg) translateY(0%);
+            }
+        }
+        .emoji .first{
+            position: absolute;
+            top:211px;
+            left:100px;
+            width:200px;
+            height:140px;
+            border-top:14px solid black;
+            border-radius: 50%;
+            animation-name: no;
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+            visibility: hidden;
+        }
+        .emoji .second{
+            position: absolute;
+            top:128px;
+            left:100px;
+            width:200px;
+            height:140px;
+            border-bottom:14px solid black;
+            border-radius: 50%;
+            animation-name: yes;
+            animation-duration: 2s;
+            transition-property: all;
+            animation-delay: 6s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        @keyframes no{
+            0%{
+                transform: translateY(0%);
+                height: 140px;
+                visibility: visible;
+            }
+            50%{
+                transform: translateY(-20%);
+                height: 50px;
+                visibility: visible;
+            }
+            100%{
+                transform: translateY(0);
+                height: 140px;
+                visibility: hidden;
+            }
+        }
+        @keyframes yes{
+            0%{
+               opacity: 0;
+            }
+           
+            100%{
+               opacity: 1;
+            }
+        }
+        @media(max-width:456px){
+            .container{
+                height: 50vh;
+            }
+            .emoji{
+                width:300px;
+                height:300px;
+            }
+            .emoji::before{
+                content: "";
+                top:66px;
+                left:88px;
+                width:25px;
+                height: 25px;
+            }
+            .emoji::after{
+                content: "";
+                top:66px;
+                right:88px;
+                width:25px;
+                height: 25px;
+            }
+            .emoji .first{
+                top:160px;
+                width:170px;
+                left:65px;
+            }
+            .emoji .second{
+                top:80px;
+                width:160px;
+                left:71px;
+            }
+            .noworry{
+                top:5%;
+                right:12%;
+                font-size: 30px;
+                text-align: center;
+            }
+            .worry{                
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="worry">Worrying about future? 
+            <h1 class="noworry">Dont Worry! Everything will be fine!</h1>          
+        </h1>
+       
+        <div class="emoji">
+            <span class="first">
+            </span>
+            <span class="second"></span>
+        </div>
+    </div>
+</body>
+</html>

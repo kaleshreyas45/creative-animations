@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jio Saavan Logo</title>
+    <style>
+        body {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 115px;
+            flex-direction: column;
+        }
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            position: relative;
+            top:100px;
+            font-size: 3rem;
+            transform: scale(0);
+            animation-name: scale;
+            animation-duration: 0.5s;
+            animation-delay: 4s;
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation-fill-mode: forwards;
+        }
+        @keyframes scale{
+            0%{
+                transform: scale(0);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+
+        .saavan {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background-color: #1c2627;
+            border-radius: 55px;
+            transform: scale(15);
+            visibility: hidden;
+            animation-name: original-position;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        }
+
+        @keyframes original-position {
+            0% {
+                visibility: hidden;
+                transform: scale(0);
+            }
+
+            100% {
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+
+        .saavanspan .music-logo {
+            position: absolute;
+            width: 35px;
+            height: 9px;
+            background-color: white;
+            z-index: 5;
+            bottom: 69px;
+            right: 40px;
+            transform: rotate(-20deg);
+            border-top-right-radius: 5px;
+            border-top-left-radius: 8px;
+        }
+
+        .saavanspan .music-logo .span1 {
+            position: absolute;
+            left: -4px;
+            top: 3px;
+            width: 8px;
+            height: 30px;
+            background-color: white;
+            transform: rotate(20deg);
+        }
+
+        .saavanspan .music-logo .span2 {
+            position: absolute;
+            right: 3px;
+            top: 1px;
+            width: 8px;
+            height: 35px;
+            background-color: white;
+            transform: rotate(20deg);
+            border-top-right-radius: 4px;
+        }
+
+        .saavanspan .music-logo .span1::before {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: -9px;
+            width: 17px;
+            height: 10px;
+            background-color: white;
+            border-radius: 46%;
+        }
+
+        .saavanspan .music-logo .span2::before {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: -9px;
+            width: 17px;
+            height: 10px;
+            background-color: white;
+            border-radius: 46%;
+        }
+
+        .saavanspan::before {
+            content: "";
+            position: absolute;
+            bottom: 13px;
+            right: 12px;
+            width: 83px;
+            height: 83px;
+            background-color: #2bc5b4;
+            border-radius: 50%;
+            z-index: 4;
+            border: 6px solid #1c2627;
+        }
+
+        .inner {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border: 20px solid white;
+            border-radius: 55px;
+            width: 220px;
+            height: 220px;
+            overflow: hidden;
+            visibility: hidden;
+            transform: scale(-15);
+            animation-name: first;
+            animation-delay: 1.5s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes first {
+            0% {
+                visibility: hidden;
+                transform: scale(-15);
+            }
+
+            100% {
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+
+        .inner1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            width: 180px;
+            height: 180px;
+            border-radius: 55px;
+            border: none;
+            overflow: hidden;
+            visibility: hidden;
+            transform: scale(-15);
+            animation-name: second;
+            animation-delay: 2s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes second {
+            0% {
+                visibility: hidden;
+                transform: scale(-15);
+            }
+
+            100% {
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+
+        .inner1::before {
+            content: "";
+            position: absolute;
+            width: 202px;
+            height: 245px;
+            border-radius: 50%;
+            top: 65px;
+            left: -123px;
+            background-color: #1c2627;
+            z-index: 2;
+            visibility: hidden;
+            transform: translate(-100%);
+            animation-name: inner1-bef;
+            animation-delay: 3s;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes inner1-bef {
+            0% {
+                visibility: hidden;
+                transform: translate(-100%);
+            }
+
+            100% {
+                visibility: visible;
+                transform: translate(0%);
+            }
+        }
+
+        .inner1::after {
+            content: "";
+            position: absolute;
+            width: 185px;
+            height: 224px;
+            border-radius: 50%;
+            top: 84px;
+            right: -116px;
+            background-color: #1c2627;
+            z-index: 2;
+            visibility: hidden;
+            transform: translateX(100%);
+            animation-name: inner1-aft;
+            animation-delay: 3s;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes inner1-aft {
+            0% {
+                visibility: hidden;
+                transform: translateX(100%);
+            }
+
+            100% {
+                visibility: visible;
+                transform: translateX(0%);
+            }
+        }
+
+        .inner1 span::before {
+            content: "";
+            position: absolute;
+            bottom: -14px;
+            left: 3px;
+            width: 65px;
+            height: 50px;
+            background-color: rgb(255, 255, 255);
+            border-top-right-radius: 100%;
+            z-index: 3;
+            visibility: hidden;
+            transform: translateY(100%);
+            animation-name: span;
+            animation-delay: 3.5s;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .inner1 span::after {
+            content: "";
+            position: absolute;
+            bottom: -14px;
+            right: 3px;
+            width: 58px;
+            height: 50px;
+            background-color: rgb(255, 255, 255);
+            border-top-left-radius: 100%;
+            z-index: 3;
+            visibility: hidden;
+            transform: translateY(100%);
+            animation-name: span;
+            animation-delay: 3.5s;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes span {
+            0% {
+                visibility: hidden;
+                transform: translateY(100%);
+            }
+
+            100% {
+                visibility: visible;
+                transform: translateY(0%);
+            }
+        }
+
+        .inner2 {
+            position: absolute;
+            top: -8px;
+            left: 13%;
+            width: 80px;
+            height: 180px;
+            background-color: #1c2627;
+            border-top-right-radius: 0%;
+            border-bottom-right-radius: 100%;
+            transform: rotate(-18deg);
+            transform-origin: top;
+            visibility: hidden;
+            transform: rotate(-90deg) translateX(-100%);
+            animation-name: inner2-sec;
+            animation-delay: 3s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes inner2-sec {
+            0% {
+                visibility: hidden;
+                transform: rotate(-90deg) translateX(-100%);
+            }
+
+            50% {
+                visibility: hidden;
+                transform: rotate(-90deg) translateX(0%);
+            }
+
+            100% {
+                visibility: visible;
+                transform: rotate(-18deg) translateX(0%);
+            }
+        }
+
+        .inner2::before {
+            content: "";
+            position: absolute;
+            left: -243%;
+            top: -42%;
+            width: 168px;
+            height: 316px;
+            border-bottom-right-radius: 74%;
+            background-color: white;
+            transform: translateY(-100%) rotate(0deg);
+            transform-origin: top;
+            visibility: hidden;
+            animation-name: inner2-bef;
+            animation-duration: 1s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes inner2-bef {
+            0% {
+                visibility: hidden;
+                transform: translateY(-100%) rotate(0deg);
+            }
+
+            100% {
+                visibility: visible;
+                transform: translateY(0%) rotate(-19deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Made with CSS</h1>
+    <div class="container">
+       
+        <div class="saavan">
+            <span class="saavanspan">
+                <div class="music-logo">
+                    <span class="span1"></span>
+                    <span class="span2"></span>
+                </div>
+            </span>
+            <div class="inner">
+                <span></span>
+                <div class="inner1">
+                    <span></span>
+                    <div class="inner2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hungry Bird</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100vh;
+        }
+        h1{
+            font-size: 50px;
+            text-align: center;
+            color:#f9df0e;
+            position: absolute;
+            top:10%;
+            left:auto;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+        .main{
+            position: absolute;
+            background-color: #f9df0e;
+            width:300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+        .main::before{
+            content: "";
+            position: absolute;
+            background-color: black;
+            width: 247px;
+            height: 355px;
+            right: -62px;
+            top: -34px;
+            clip-path: polygon(100% 0, 0 50%, 100% 100%);
+            animation-name: close;
+            animation-duration: 1.9s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            animation-timing-function: ease-in-out;
+            transition: all;
+            transition-duration: 0.5;
+        }
+        .main::after{
+            content: "";
+            position: absolute;
+            right: 103px;
+            top: 46px;
+            background-color: black;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            animation-name: change-position;
+            animation-duration: 1.9s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            transform: translate(-10px,-10px);
+        }
+        .main .one{
+            position: absolute;
+            width:25px;
+            height: 25px;
+            top:42%;
+            right:0;
+            transform: translateX(1000%);
+            background-color: #f9df0e;
+            border-radius: 50%;
+            animation-name: move-forward;
+            animation-duration: 1.9s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            transition: all;
+            transition-duration: 0.5;
+          
+        }
+        
+        @keyframes move-forward{
+            0%{
+                transform: translateX(1000%);
+            }
+            100%{
+                transform: translateX(-800%);
+            }
+        }
+        @keyframes change-position{
+            0%{
+                transform: translate(-10px,-10px);
+            }
+            50%{
+                transform: translate(0,0);
+            }
+            100%{
+                transform: translate(-10px,-10px);
+            }
+        }
+        @keyframes close{
+            0%{
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);                
+            }
+            50%{
+                clip-path: polygon(100% 50%, 0 50%, 100% 50%);
+            }
+            100%{
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hungry Bird</h1>
+        <div class="main">
+            <span class="one"></span>
+        </div>
+    </div>
+</body>
+</html>
